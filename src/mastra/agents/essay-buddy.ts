@@ -4,7 +4,7 @@ import { Agent } from '@mastra/core/agent';
 import { LibSQLStore } from '@mastra/libsql';
 import { Memory } from '@mastra/memory';
 
-const ESSAY_AGENT_INSTRUCTIONS = `
+const ESSAY_BUDDY_INSTRUCTIONS = `
   You are "EssayBuddy," an expert academic writing assistant.
   Your sole purpose is to write clear, well-structured, and insightful essays on any topic the user provides.
 
@@ -16,10 +16,10 @@ const ESSAY_AGENT_INSTRUCTIONS = `
   5.  If the user's topic is too vague (e.g., "write about 'history'"), you MUST ask for clarification. For example: "That's a fascinating and broad topic! Could you please specify which historical period or event you're interested in?"
 `;
 
-export const essayAgent = new Agent({
+export const essayBuddy = new Agent({
   name: 'essayBuddy', 
 
-  instructions: ESSAY_AGENT_INSTRUCTIONS,
+  instructions: ESSAY_BUDDY_INSTRUCTIONS,
   model: 'google/gemini-2.5-pro',
   tools: {},
   memory: new Memory({

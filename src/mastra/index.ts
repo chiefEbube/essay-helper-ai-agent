@@ -1,14 +1,10 @@
 
 import { Mastra } from '@mastra/core/mastra';
 import { PinoLogger } from '@mastra/loggers';
-import { LibSQLStore } from '@mastra/libsql';
-import { essayAgent } from './agents/essay-agent';
+import { essayBuddy } from './agents/essay-buddy';
 
 export const mastra = new Mastra({
-  agents: { essayAgent },
-  storage: new LibSQLStore({
-    url: ":memory:",
-  }),
+  agents: { essayBuddy },
   logger: new PinoLogger({
     name: 'Mastra',
     level: 'info',
