@@ -24,5 +24,4 @@ export const essayBuddy = new Agent({
       lastMessages: 20,
     },
   }),
-  scorers: undefined,
 });
