@@ -1,5 +1,3 @@
-// src/mastra/agents/essay-agent.ts
-
 import { Agent } from '@mastra/core/agent';
 import { LibSQLStore } from '@mastra/libsql';
 import { Memory } from '@mastra/memory';
@@ -20,15 +18,11 @@ export const essayBuddy = new Agent({
   name: 'essayBuddy', 
 
   instructions: ESSAY_BUDDY_INSTRUCTIONS,
-  model: 'google/gemini-2.5-pro',
+  model: 'google/gemini-2.0-flash',
   tools: {},
   memory: new Memory({
     storage: new LibSQLStore({
         url: 'file:../mastra.db', 
       }),
-    options: {
-      lastMessages: 20,
-    },
   }),
-  scorers: undefined,
 });
